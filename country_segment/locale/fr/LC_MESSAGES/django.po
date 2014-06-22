@@ -1,0 +1,1051 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-23 02:10+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: cms_plugins.py:24
+msgid "Segment by country"
+msgstr "Secteur par pays"
+
+#: models.py:28
+msgid "Anonymous Proxy"
+msgstr "Anonyme proxy"
+
+#: models.py:29
+msgid "Satellite Provider"
+msgstr "Fournisseur de satellite"
+
+#: models.py:30
+msgid "Other Country"
+msgstr "Autres Pays"
+
+#: models.py:31
+msgid "Andorra"
+msgstr ""
+
+#: models.py:32
+msgid "United Arab Emirates"
+msgstr ""
+
+#: models.py:33
+msgid "Afghanistan"
+msgstr ""
+
+#: models.py:34
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: models.py:35
+msgid "Anguilla"
+msgstr ""
+
+#: models.py:36
+msgid "Albania"
+msgstr ""
+
+#: models.py:37
+msgid "Armenia"
+msgstr ""
+
+#: models.py:38
+msgid "Angola"
+msgstr ""
+
+#: models.py:39
+msgid "Asia/Pacific Region"
+msgstr ""
+
+#: models.py:40
+msgid "Antarctica"
+msgstr ""
+
+#: models.py:41
+msgid "Argentina"
+msgstr ""
+
+#: models.py:42
+msgid "American Samoa"
+msgstr ""
+
+#: models.py:43
+msgid "Austria"
+msgstr ""
+
+#: models.py:44
+msgid "Australia"
+msgstr ""
+
+#: models.py:45
+msgid "Aruba"
+msgstr ""
+
+#: models.py:46
+msgid "Aland Islands"
+msgstr ""
+
+#: models.py:47
+msgid "Azerbaijan"
+msgstr ""
+
+#: models.py:48
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: models.py:49
+msgid "Barbados"
+msgstr ""
+
+#: models.py:50
+msgid "Bangladesh"
+msgstr ""
+
+#: models.py:51
+msgid "Belgium"
+msgstr ""
+
+#: models.py:52
+msgid "Burkina Faso"
+msgstr ""
+
+#: models.py:53
+msgid "Bulgaria"
+msgstr ""
+
+#: models.py:54
+msgid "Bahrain"
+msgstr ""
+
+#: models.py:55
+msgid "Burundi"
+msgstr ""
+
+#: models.py:56
+msgid "Benin"
+msgstr ""
+
+#: models.py:57
+msgid "Saint Bartelemey"
+msgstr ""
+
+#: models.py:58
+msgid "Bermuda"
+msgstr ""
+
+#: models.py:59
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: models.py:60
+msgid "Bolivia"
+msgstr ""
+
+#: models.py:61
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr ""
+
+#: models.py:62
+msgid "Brazil"
+msgstr ""
+
+#: models.py:63
+msgid "Bahamas"
+msgstr ""
+
+#: models.py:64
+msgid "Bhutan"
+msgstr ""
+
+#: models.py:65
+msgid "Bouvet Island"
+msgstr ""
+
+#: models.py:66
+msgid "Botswana"
+msgstr ""
+
+#: models.py:67
+msgid "Belarus"
+msgstr ""
+
+#: models.py:68
+msgid "Belize"
+msgstr ""
+
+#: models.py:69
+msgid "Canada"
+msgstr ""
+
+#: models.py:70
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: models.py:71
+msgid "Congo, The Democratic Republic of the"
+msgstr ""
+
+#: models.py:72
+msgid "Central African Republic"
+msgstr ""
+
+#: models.py:73
+msgid "Congo"
+msgstr ""
+
+#: models.py:74
+msgid "Switzerland"
+msgstr "Suisse"
+
+#: models.py:75
+msgid "Cote d’Ivoire"
+msgstr ""
+
+#: models.py:76
+msgid "Cook Islands"
+msgstr ""
+
+#: models.py:77
+msgid "Chile"
+msgstr ""
+
+#: models.py:78
+msgid "Cameroon"
+msgstr ""
+
+#: models.py:79
+msgid "China"
+msgstr "Chine"
+
+#: models.py:80
+msgid "Colombia"
+msgstr ""
+
+#: models.py:81
+msgid "Costa Rica"
+msgstr ""
+
+#: models.py:82
+msgid "Cuba"
+msgstr ""
+
+#: models.py:83
+msgid "Cape Verde"
+msgstr ""
+
+#: models.py:84
+msgid "Curacao"
+msgstr ""
+
+#: models.py:85
+msgid "Christmas Island"
+msgstr ""
+
+#: models.py:86
+msgid "Cyprus"
+msgstr ""
+
+#: models.py:87
+msgid "Czech Republic"
+msgstr ""
+
+#: models.py:88
+msgid "Germany"
+msgstr "Allemagne"
+
+#: models.py:89
+msgid "Djibouti"
+msgstr ""
+
+#: models.py:90
+msgid "Denmark"
+msgstr ""
+
+#: models.py:91
+msgid "Dominica"
+msgstr ""
+
+#: models.py:92
+msgid "Dominican Republic"
+msgstr ""
+
+#: models.py:93
+msgid "Algeria"
+msgstr ""
+
+#: models.py:94
+msgid "Ecuador"
+msgstr ""
+
+#: models.py:95
+msgid "Estonia"
+msgstr ""
+
+#: models.py:96
+msgid "Egypt"
+msgstr ""
+
+#: models.py:97
+msgid "Western Sahara"
+msgstr ""
+
+#: models.py:98
+msgid "Eritrea"
+msgstr ""
+
+#: models.py:99
+msgid "Spain"
+msgstr "Espagne"
+
+#: models.py:100
+msgid "Ethiopia"
+msgstr ""
+
+#: models.py:101
+msgid "Europe"
+msgstr ""
+
+#: models.py:102
+msgid "Finland"
+msgstr "Finlande"
+
+#: models.py:103
+msgid "Fiji"
+msgstr ""
+
+#: models.py:104
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: models.py:105
+msgid "Micronesia, Federated States of"
+msgstr ""
+
+#: models.py:106
+msgid "Faroe Islands"
+msgstr ""
+
+#: models.py:107
+msgid "France"
+msgstr "France"
+
+#: models.py:108
+msgid "Gabon"
+msgstr ""
+
+#: models.py:109
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+#: models.py:110
+msgid "Grenada"
+msgstr ""
+
+#: models.py:111
+msgid "Georgia"
+msgstr ""
+
+#: models.py:112
+msgid "French Guiana"
+msgstr ""
+
+#: models.py:113
+msgid "Guernsey"
+msgstr ""
+
+#: models.py:114
+msgid "Ghana"
+msgstr ""
+
+#: models.py:115
+msgid "Gibraltar"
+msgstr ""
+
+#: models.py:116
+msgid "Greenland"
+msgstr ""
+
+#: models.py:117
+msgid "Gambia"
+msgstr ""
+
+#: models.py:118
+msgid "Guinea"
+msgstr ""
+
+#: models.py:119
+msgid "Guadeloupe"
+msgstr ""
+
+#: models.py:120
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: models.py:121
+msgid "Greece"
+msgstr ""
+
+#: models.py:122
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: models.py:123
+msgid "Guatemala"
+msgstr ""
+
+#: models.py:124
+msgid "Guam"
+msgstr ""
+
+#: models.py:125
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: models.py:126
+msgid "Guyana"
+msgstr ""
+
+#: models.py:127
+msgid "Hong Kong"
+msgstr ""
+
+#: models.py:128
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: models.py:129
+msgid "Honduras"
+msgstr ""
+
+#: models.py:130
+msgid "Croatia"
+msgstr ""
+
+#: models.py:131
+msgid "Haiti"
+msgstr ""
+
+#: models.py:132
+msgid "Hungary"
+msgstr ""
+
+#: models.py:133
+msgid "Indonesia"
+msgstr ""
+
+#: models.py:134
+msgid "Ireland"
+msgstr ""
+
+#: models.py:135
+msgid "Israel"
+msgstr ""
+
+#: models.py:136
+msgid "Isle of Man"
+msgstr ""
+
+#: models.py:137
+msgid "India"
+msgstr ""
+
+#: models.py:138
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: models.py:139
+msgid "Iraq"
+msgstr ""
+
+#: models.py:140
+msgid "Iran, Islamic Republic of"
+msgstr ""
+
+#: models.py:141
+msgid "Iceland"
+msgstr ""
+
+#: models.py:142
+msgid "Italy"
+msgstr "Italie"
+
+#: models.py:143
+msgid "Jersey"
+msgstr ""
+
+#: models.py:144
+msgid "Jamaica"
+msgstr ""
+
+#: models.py:145
+msgid "Jordan"
+msgstr ""
+
+#: models.py:146
+msgid "Japan"
+msgstr ""
+
+#: models.py:147
+msgid "Kenya"
+msgstr ""
+
+#: models.py:148
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: models.py:149
+msgid "Cambodia"
+msgstr ""
+
+#: models.py:150
+msgid "Kiribati"
+msgstr ""
+
+#: models.py:151
+msgid "Comoros"
+msgstr ""
+
+#: models.py:152
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: models.py:153
+msgid "Korea, Democratic People’s Republic of"
+msgstr ""
+
+#: models.py:154
+msgid "Korea, Republic of"
+msgstr ""
+
+#: models.py:155
+msgid "Kuwait"
+msgstr ""
+
+#: models.py:156
+msgid "Cayman Islands"
+msgstr ""
+
+#: models.py:157
+msgid "Kazakhstan"
+msgstr ""
+
+#: models.py:158
+msgid "Lao, People’s Democratic Republic of"
+msgstr ""
+
+#: models.py:159
+msgid "Lebanon"
+msgstr ""
+
+#: models.py:160
+msgid "Saint Lucia"
+msgstr ""
+
+#: models.py:161
+msgid "Liechtenstein"
+msgstr ""
+
+#: models.py:162
+msgid "Sri Lanka"
+msgstr ""
+
+#: models.py:163
+msgid "Liberia"
+msgstr ""
+
+#: models.py:164
+msgid "Lesotho"
+msgstr ""
+
+#: models.py:165
+msgid "Lithuania"
+msgstr ""
+
+#: models.py:166
+msgid "Luxembourg"
+msgstr ""
+
+#: models.py:167
+msgid "Latvia"
+msgstr ""
+
+#: models.py:168
+msgid "Libyan Arab Jamahiriya"
+msgstr ""
+
+#: models.py:169
+msgid "Morocco"
+msgstr ""
+
+#: models.py:170
+msgid "Monaco"
+msgstr ""
+
+#: models.py:171
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: models.py:172
+msgid "Montenegro"
+msgstr ""
+
+#: models.py:173
+msgid "Saint Martin"
+msgstr ""
+
+#: models.py:174
+msgid "Madagascar"
+msgstr ""
+
+#: models.py:175
+msgid "Marshall Islands"
+msgstr ""
+
+#: models.py:176
+msgid "Macedonia"
+msgstr ""
+
+#: models.py:177
+msgid "Mali"
+msgstr ""
+
+#: models.py:178
+msgid "Myanmar"
+msgstr ""
+
+#: models.py:179
+msgid "Mongolia"
+msgstr ""
+
+#: models.py:180
+msgid "Macao"
+msgstr ""
+
+#: models.py:181
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: models.py:182
+msgid "Martinique"
+msgstr ""
+
+#: models.py:183
+msgid "Mauritania"
+msgstr ""
+
+#: models.py:184
+msgid "Montserrat"
+msgstr ""
+
+#: models.py:185
+msgid "Malta"
+msgstr ""
+
+#: models.py:186
+msgid "Mauritius"
+msgstr ""
+
+#: models.py:187
+msgid "Maldives"
+msgstr ""
+
+#: models.py:188
+msgid "Malawi"
+msgstr ""
+
+#: models.py:189
+msgid "Mexico"
+msgstr ""
+
+#: models.py:190
+msgid "Malaysia"
+msgstr ""
+
+#: models.py:191
+msgid "Mozambique"
+msgstr ""
+
+#: models.py:192
+msgid "Namibia"
+msgstr ""
+
+#: models.py:193
+msgid "New Caledonia"
+msgstr ""
+
+#: models.py:194
+msgid "Niger"
+msgstr ""
+
+#: models.py:195
+msgid "Norfolk Island"
+msgstr ""
+
+#: models.py:196
+msgid "Nigeria"
+msgstr ""
+
+#: models.py:197
+msgid "Nicaragua"
+msgstr ""
+
+#: models.py:198
+msgid "Netherlands"
+msgstr "Pays-Bas"
+
+#: models.py:199
+msgid "Norway"
+msgstr ""
+
+#: models.py:200
+msgid "Nepal"
+msgstr ""
+
+#: models.py:201
+msgid "Nauru"
+msgstr ""
+
+#: models.py:202
+msgid "Niue"
+msgstr ""
+
+#: models.py:203
+msgid "New Zealand"
+msgstr ""
+
+#: models.py:204
+msgid "Oman"
+msgstr ""
+
+#: models.py:205
+msgid "Panama"
+msgstr ""
+
+#: models.py:206
+msgid "Peru"
+msgstr ""
+
+#: models.py:207
+msgid "French Polynesia"
+msgstr ""
+
+#: models.py:208
+msgid "Papua New Guinea"
+msgstr ""
+
+#: models.py:209
+msgid "Philippines"
+msgstr ""
+
+#: models.py:210
+msgid "Pakistan"
+msgstr ""
+
+#: models.py:211
+msgid "Poland"
+msgstr ""
+
+#: models.py:212
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: models.py:213
+msgid "Pitcairn"
+msgstr ""
+
+#: models.py:214
+msgid "Puerto Rico"
+msgstr ""
+
+#: models.py:215
+msgid "Palestinian Territory"
+msgstr ""
+
+#: models.py:216
+msgid "Portugal"
+msgstr ""
+
+#: models.py:217
+msgid "Palau"
+msgstr ""
+
+#: models.py:218
+msgid "Paraguay"
+msgstr ""
+
+#: models.py:219
+msgid "Qatar"
+msgstr ""
+
+#: models.py:220
+msgid "Reunion"
+msgstr ""
+
+#: models.py:221
+msgid "Romania"
+msgstr ""
+
+#: models.py:222
+msgid "Serbia"
+msgstr ""
+
+#: models.py:223
+msgid "Russian Federation"
+msgstr ""
+
+#: models.py:224
+msgid "Rwanda"
+msgstr ""
+
+#: models.py:225
+msgid "Saudi Arabia"
+msgstr ""
+
+#: models.py:226
+msgid "Solomon Islands"
+msgstr ""
+
+#: models.py:227
+msgid "Seychelles"
+msgstr ""
+
+#: models.py:228
+msgid "Sudan"
+msgstr ""
+
+#: models.py:229
+msgid "Sweden"
+msgstr ""
+
+#: models.py:230
+msgid "Singapore"
+msgstr ""
+
+#: models.py:231
+msgid "Saint Helena"
+msgstr ""
+
+#: models.py:232
+msgid "Slovenia"
+msgstr ""
+
+#: models.py:233
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: models.py:234
+msgid "Slovakia"
+msgstr ""
+
+#: models.py:235
+msgid "Sierra Leone"
+msgstr ""
+
+#: models.py:236
+msgid "San Marino"
+msgstr ""
+
+#: models.py:237
+msgid "Senegal"
+msgstr ""
+
+#: models.py:238
+msgid "Somalia"
+msgstr ""
+
+#: models.py:239
+msgid "Suriname"
+msgstr ""
+
+#: models.py:240
+msgid "South Sudan"
+msgstr ""
+
+#: models.py:241
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: models.py:242
+msgid "El Salvador"
+msgstr ""
+
+#: models.py:243
+msgid "Sint Maarten"
+msgstr ""
+
+#: models.py:244
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: models.py:245
+msgid "Swaziland"
+msgstr ""
+
+#: models.py:246
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: models.py:247
+msgid "Chad"
+msgstr ""
+
+#: models.py:248
+msgid "French Southern Territories"
+msgstr ""
+
+#: models.py:249
+msgid "Togo"
+msgstr ""
+
+#: models.py:250
+msgid "Thailand"
+msgstr ""
+
+#: models.py:251
+msgid "Tajikistan"
+msgstr ""
+
+#: models.py:252
+msgid "Tokelau"
+msgstr ""
+
+#: models.py:253
+msgid "Timor-Leste"
+msgstr ""
+
+#: models.py:254
+msgid "Turkmenistan"
+msgstr ""
+
+#: models.py:255
+msgid "Tunisia"
+msgstr ""
+
+#: models.py:256
+msgid "Tonga"
+msgstr ""
+
+#: models.py:257
+msgid "Turkey"
+msgstr ""
+
+#: models.py:258
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: models.py:259
+msgid "Tuvalu"
+msgstr ""
+
+#: models.py:260
+msgid "Taiwan"
+msgstr ""
+
+#: models.py:261
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: models.py:262
+msgid "Ukraine"
+msgstr ""
+
+#: models.py:263
+msgid "Uganda"
+msgstr ""
+
+#: models.py:264
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: models.py:265
+msgid "United States"
+msgstr "États-Unis"
+
+#: models.py:266
+msgid "Uruguay"
+msgstr ""
+
+#: models.py:267
+msgid "Uzbekistan"
+msgstr ""
+
+#: models.py:268
+msgid "Holy See (Vatican City State)"
+msgstr ""
+
+#: models.py:269
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: models.py:270
+msgid "Venezuela"
+msgstr ""
+
+#: models.py:271
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: models.py:272
+msgid "Virgin Islands, U.S."
+msgstr ""
+
+#: models.py:273
+msgid "Vietnam"
+msgstr ""
+
+#: models.py:274
+msgid "Vanuatu"
+msgstr ""
+
+#: models.py:275
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: models.py:276
+msgid "Samoa"
+msgstr ""
+
+#: models.py:277
+msgid "Yemen"
+msgstr ""
+
+#: models.py:278
+msgid "Mayotte"
+msgstr ""
+
+#: models.py:279
+msgid "South Africa"
+msgstr ""
+
+#: models.py:280
+msgid "Zambia"
+msgstr ""
+
+#: models.py:281
+msgid "Zimbabwe"
+msgstr ""
+
+#: models.py:289
+msgid "{code}: {name}"
+msgstr ""
+
+#: models.py:296
+msgid "country"
+msgstr "pays"
+
+#: models.py:307
+msgid "{name} ({code})"
+msgstr ""
