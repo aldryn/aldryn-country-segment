@@ -29,9 +29,9 @@ NOTE: At this time, the project has been tested under:
    the whole toolbar won't render at all and you may have trouble with
    AliasPlugins.
 1. Install Aldryn Segmentation (not yet in PyPI)
-1. Add 'country-segment' to INSTALLED_APPS in your Django project's
+1. Add `'country-segment'` to INSTALLED_APPS in your Django project's
    settings file
-1. Add 'country_segment.middleware.resolve_country_code_middelware.ResolveCountryCodeMiddleware'
+1. Add `country_segment.middleware.resolve_country_code_middelware.ResolveCountryCodeMiddleware`
    to your settings.MIDDLEWARE
 1. `python manage.py schemamigration country_segment --initial`
 1. `python manage.py migrate country_segment`
@@ -61,10 +61,22 @@ like this should work. Remember the path is relative to your settings.py
 file/module.:
 
 ````
-# setting.py
+# settings.py
+
 from unipath import Path
 PROJECT_ROOT = Path(__file__).ancestor(2)
 PROJECT_PATH = Path(__file__).ancestor(1)
+
+...
+
+# Install the middleware. Should go near the top.
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'country_segment.middleware.resolve_country_code_middleware.ResolveCountryCodeMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    ...
+)
 
 ...
 
