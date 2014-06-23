@@ -28,14 +28,20 @@ NOTE: At this time, the project has been tested under:
    3.0.2.dev1, otherwise the Segment menu will not appear correctly and likely
    the whole toolbar won't render at all and you may have trouble with
    AliasPlugins.
-1. Install Aldryn Segmentation (not yet in PyPI)
+1. Install Aldryn Segmentation (not yet in PyPI).
 1. Add `'country-segment'` to INSTALLED_APPS in your Django project's
-   settings file
+   settings file.
 1. Add `country_segment.middleware.resolve_country_code_middelware.ResolveCountryCodeMiddleware`
-   to your settings.MIDDLEWARE
-1. `python manage.py schemamigration country_segment --initial`
-1. `python manage.py migrate country_segment`
+   to your settings.MIDDLEWARE.
+1. `python manage.py schemamigration country_segment --initial`.
+1. `python manage.py migrate country_segment`.
 1. Properly configure your installation with the MaxMind dataset (read on).
+
+Optional but recommended:
+
+1. Install django-easy select2: `pip install django-easy-select2` (highly
+   recommended).
+1. Add `'easy_select2'` to your project's settings.INSTALLED_APPS.
 
 
 Setup the GeoIP Database

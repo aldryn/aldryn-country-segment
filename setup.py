@@ -21,12 +21,12 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='aldryn-country-segmentation',
+    name='aldryn-country-segment',
     version=__version__,
     description='A Country Segment for Aldryn Segmentation for django CMS',
     author='Divio AG',
     author_email='info@divio.ch',
-    url='https://github.com/aldryn/aldryn-country-segmentation',
+    url='https://github.com/aldryn/aldryn-country-segment',
     packages=find_packages(),
     package_data={
         "country_segment": [

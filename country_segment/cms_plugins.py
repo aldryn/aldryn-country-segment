@@ -11,6 +11,7 @@ from segmentation.cms_plugins import SegmentPluginBase
 from .models import CountrySegmentPluginModel
 
 
+
 class CountrySegmentPlugin(SegmentPluginBase):
     '''
     This plugin allows segmentation based on the visitor's IP addresses
@@ -22,6 +23,16 @@ class CountrySegmentPlugin(SegmentPluginBase):
 
     model = CountrySegmentPluginModel
     name = _('Segment by country')
+
+    #
+    # If django-easy-select2 is installed, we can greatly enhance the
+    # useability of this change form.
+    #
+    try:
+        from easy_select2 import select2_modelform
+        form = select2_modelform(CountrySegmentPluginModel, attrs={'width': '250px'})
+    except:
+        pass
 
     def is_context_appropriate(self, context, instance):
         code = context.get('COUNTRY_CODE')
