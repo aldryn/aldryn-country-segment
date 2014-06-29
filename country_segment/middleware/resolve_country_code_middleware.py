@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 import warnings
+from ..dat_getter import dat_getter
 
 from django.contrib.gis.geoip import GeoIP
 
@@ -16,9 +17,11 @@ class ResolveCountryCodeMiddleware(object):
 
     def __init__(self):
         try:
-            self.geo_ip = GeoIP()
-        except:
-            warnings.warn('GeoIP database is not initialized.')
+            country_data = dat_getter.update_dat()
+            print 'GeoIP data at: {0}'.format(country_data)
+            self.geo_ip = GeoIP(**country_data)
+        except Exception as e:
+            warnings.warn('GeoIP database is not initialized: {0}'.format(e))
             self.geo_ip = False
 
 

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
 from aldryn_client import forms
 
 class Form(forms.BaseForm):
@@ -25,10 +24,4 @@ class Form(forms.BaseForm):
     			#
     			settings_dict['MIDDLEWARE_CLASSES'].insert(0, country_mw)
 
-    	#
-    	# Now, add the location of the GeoIP.dat file, which needs to be
-    	# sync'ed to Aldryn. in the same parent folder that contains the
-    	# project folder.
-    	#
-        settings_dict['GEOIP_PATH'] = os.path.join(os.path.dirname(os.path.dirname(__file__)), '/GeoIP.dat', )
         return settings_dict
