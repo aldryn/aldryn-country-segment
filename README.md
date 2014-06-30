@@ -1,3 +1,11 @@
+NOTICE
+======
+
+This app will not work until Aldryn includes the MaxMind GeoIP C-API into
+their build pack. For example:
+https://github.com/Bouke/heroku-buildpack-python-geoip/tree/master
+
+
 Aldryn Country Segmentation
 ===========================
 
@@ -10,7 +18,6 @@ HTTPRequest object nameed `COUNTRY_CODE`.
 
 The segmentation plugin contained herein allows any number of "segments" to be
 defined based on the COUNTRY_CODE attribute.
-
 
 Installation
 ------------
@@ -31,7 +38,7 @@ NOTE: At this time, the project has been tested under:
 1. Install Aldryn Segmentation (not yet in PyPI).
 1. Add `'country-segment'` to INSTALLED_APPS in your Django project's
    settings file.
-1. Add `country_segment.middleware.resolve_country_code_middelware.ResolveCountryCodeMiddleware`
+1. Add `country_segment.middleware.ResolveCountryCodeMiddleware`
    to your settings.MIDDLEWARE.
 1. `python manage.py schemamigration country_segment --initial`.
 1. `python manage.py migrate country_segment`.
@@ -52,28 +59,12 @@ their geo-location products. The one we're interested in here is called
 "GeoLite Country" and is effectively a static database in a single file:
 `GeoIP.dat`.
 
-This database is *not* distributed with Aldryn Country Segment.
+This database is *not* distributed with Aldryn Country Segment, however, this
+version of this app will automatically get it for you.
 
-To setup MaxMind's dataset, first visit:
-http://dev.maxmind.com/geoip/legacy/geolite/.
-
-Download the dataset (http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz).
-If this link is broken for some reason, it is their product: GeoLite Country
-and you want the Binary / gzip version.
-
-In your settings.py, set `GEOIP_PATH` to the location of your dataset. For
-example, if you place the DAT file in the root of your project, then something
-like this should work. Remember the path is relative to your settings.py
-file/module.:
-
+NOTE: There is no need to include any settings for GEO_IP. If you provide some
+anyway, the middleware will not use them.
 ````
-# settings.py
-
-from unipath import Path
-PROJECT_ROOT = Path(__file__).ancestor(2)
-PROJECT_PATH = Path(__file__).ancestor(1)
-
-...
 
 # Install the middleware. Should go near the top.
 MIDDLEWARE_CLASSES = (
@@ -83,18 +74,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     ...
 )
-
-...
-
-#
-# GEOIP SETTINGS
-#
-GEOIP_PATH = str('%s%s' % (PROJECT_ROOT, '/GeoIP.dat', ))
 ````
-
-The reason you'll want to keep it in the root of your project (or similar), is
-because you'll want to update the database each month when MaxMind release a
-new Lite version. The accuracy of these databases depend on regular updates.
 
 On application server start, the middleware will emit a warning to your
 console/logs: "GeoIP database is not initialized." if it could not find or
@@ -106,4 +86,3 @@ Helpful links
 
 - https://docs.djangoproject.com/en/dev/ref/contrib/gis/geoip/
 - http://dev.maxmind.com/geoip/
-

@@ -15,6 +15,7 @@ class DatGetter(object):
 
     path = ''
     filename = 'GeoIP.dat'
+    # TODO: This should probably be a configuration option.
     url = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz'
     daily = 24 * 3600
     weekly = 7 * 24 * 3600
