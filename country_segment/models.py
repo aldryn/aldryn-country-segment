@@ -7,10 +7,13 @@ from django.utils import six
 from django.utils.functional import lazy
 from django.utils.translation import ugettext_lazy as _
 
-from segmentation.models import SegmentBasePluginModel
+from aldryn_segmentation.models import SegmentBasePluginModel
 
 
 class CountrySegmentPluginModel(SegmentBasePluginModel):
+
+    class Meta:
+        app_label = 'country_segment'
 
     #
     # NOTE: This list is derived from MaxMind's datasets

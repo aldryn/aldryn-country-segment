@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
 
-from segmentation.cms_plugins import SegmentPluginBase
+from aldryn_segmentation.cms_plugins import SegmentPluginBase
 
 from .models import CountrySegmentPluginModel
 
