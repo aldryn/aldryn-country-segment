@@ -16,7 +16,7 @@ The middleware performs the lookup, then places a new attribute on the
 HTTPRequest object named `COUNTRY_CODE`.
 
 The segmentation plugin contained herein allows any number of "segments" to be
-defined based on the COUNTRY_CODE attribute.
+defined based on the `COUNTRY_CODE` attribute.
 
 Installation
 ------------
@@ -57,14 +57,25 @@ their geo-location products. The one we're interested in here is called
 `GeoIP.dat`.
 
 This database is *not* distributed with Aldryn Country Segment, however, this
-version of this app will automatically get it for you. For details, read below or examine the script at `country_segment.dat_getter.py`.
+version of this app will automatically get it for you. For details, read below
+or examine the script at `country_segment.dat_getter.py`.
 
 ### Important Notes:
 
-- **Automatic dat file downloads** - On startup, the file `country_segment.dat_getter.py` will initiate a connection to MaxMind to get this appropriate file and install it into your site-packages inside the country_segment directory. Upon subsequent restarts of your application or triggers via the management command, this same script will check the modification date of the MaxMind database and, if older than one week, will re-fetch it. Note, however, that MaxMind only updates the free version of this file about once per month, so, if you need better accuracy or more frequently updated data, you should consider subscribing to their service. For unattended dat file upgrades in production, you should consider Celery or Cron.
+- **Automatic dat file downloads** - On startup, the file
+  `country_segment.dat_getter.py` will initiate a connection to MaxMind to get
+  this appropriate file and install it into your site-packages inside the
+  country_segment directory. Upon subsequent restarts of your application or
+  triggers via the management command (`manage.py update_dat`), this same script
+  will check the modification date of the MaxMind database and, if older than
+  one week, will re-fetch it. Note, however, that MaxMind only updates the free
+  version of this file about once per month, so, if you need better accuracy or
+  more frequently updated data, you should consider subscribing to their
+  service. For unattended dat file upgrades in production, you should consider
+  Celery or Cron.
 
-- **No further settings required** - There is no need to include any settings for GEO_IP. If you provide some
-anyway, the middleware will not use them.
+- **No further settings required** - There is no need to include any settings
+  for GEO_IP. If you provide some anyway, the middleware will not use them.
 
 ````
 # Install the middleware. Should go near the top.
