@@ -17,18 +17,28 @@ class DatGetter(object):
 
     path = ''
     filename = 'GeoIP.dat'
-    # TODO: This should probably be a configuration option.
-    url = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz'
+    url = getattr(settings, 'COUNTRY_SEGMENT_DAT_URL', 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz')
     daily = 24 * 3600
     weekly = 7 * 24 * 3600
 
 
     def __init__(self):
         '''
-        Upon loading this module, it will create a singleton instance of
-        itself which figures out where it is on the filesystem, then starts an
-        independent process that repeatedly (weekly) checks to see if it has
-        an up-to-date GeoIP.dat file, and if not, fetches one.
+        Upon loading this module, it figures out where it is on the
+        filesystem, then checks to see if it has an up-to-date GeoIP.dat file,
+        and if not, tries to fetch one.
+
+        Also, if `ALDRYN` is True in the project settings, then this will also
+        spawn a process to continuously re-check and download a new dat file
+        each week (note: MaxMind only updates it once per month or so,
+        though.)
+
+        If this is running on Aldryn, it is not recommended that you also use
+        the management command (is this even possible?)
+
+        If not running on Aldryn, consider using a cron-job or Celery task to
+        invoke the management command about once a week to ensure reasonable,
+        continuous accuracy.
         '''
 
         #
@@ -140,4 +150,5 @@ class DatGetter(object):
         os.rename(tmpfilepath, self.filepath)
 
 
-dat_getter = DatGetter()
+if getattr(settings, 'ALDRYN', False):
+    dat_getter = DatGetter()
