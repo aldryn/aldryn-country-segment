@@ -7,6 +7,8 @@ import urllib
 import gzip
 import sched, time
 
+from django.conf import settings
+
 from random import randint
 from datetime import datetime, timedelta
 
@@ -36,14 +38,24 @@ class DatGetter(object):
         self.zfilepath = os.path.join(self.path, self.filename + '.gz')
         self.filepath = os.path.join(self.path, self.filename)
 
-        pid = os.fork()
-        if pid == 0:
-            #
-            # Set-up a scheduler in another process
-            #
-            self.scheduler = sched.scheduler(time.time, time.sleep)
-            self.scheduler.enter(self.weekly, 1, self.update_dat, (self.scheduler,))
-            self.scheduler.run()
+        #
+        # To have this automaticaly schedule itself, set ALDRYN=True in
+        # settings. However, using this elsewhere will likely cause issues
+        # with restarting.
+        #
+        # Instead, use a cron-job or celery-task to run update_dat() weekly.
+        #
+        if getattr(settings, 'ALDRYN', False):
+            pid = os.fork()
+            if pid == 0:
+                #
+                # Set-up a scheduler in another process
+                #
+                self.scheduler = sched.scheduler(time.time, time.sleep)
+                self.scheduler.enter(self.weekly, 1, self.update_dat, (self.scheduler,))
+                self.scheduler.run()
+        else:
+            self.update_dat()
 
 
     def update_dat(self, scheduler=None):
@@ -61,7 +73,7 @@ class DatGetter(object):
         # doesn't exist or it is already older than 1 week old.
         #
         # This '1 week' only counts when this service is started. Once it is
-        # running, it will DL a new file ever 7 days. Since MaxMind only
+        # running, it will DL a new file every 7 days. Since MaxMind only
         # update the file on a monthly basis, this could mean that the file
         # gets, at most, 38 days out-of-date. Any application that requires
         # more up-to-date data should consider a proper MaxMind subscription.
@@ -104,7 +116,7 @@ class DatGetter(object):
     def get_updated_dat(self):
         '''
         Get's the GeoIP.dat.gz file from MaxMind, ungzip it into a temporary
-        file, and renames it to the correct filename. May throw exceptions.
+        file, and rename it to the correct filename. May throw exceptions.
         '''
 
         #
@@ -126,5 +138,6 @@ class DatGetter(object):
         # Rename the tmpfilepath to the correct filename
         #
         os.rename(tmpfilepath, self.filepath)
+
 
 dat_getter = DatGetter()
