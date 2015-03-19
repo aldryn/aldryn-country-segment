@@ -3,7 +3,10 @@
 from __future__ import unicode_literals
 
 import warnings
-from ..dat_getter import dat_getter
+# XXX intellectronica 2015-03-19
+# Disabling dat_getter for now. Users need to make sure they have the GeoIP
+# DB installed to use this.
+# from ..dat_getter import dat_getter
 
 from django.contrib.gis.geoip import GeoIP
 
@@ -12,7 +15,10 @@ class ResolveCountryCodeMiddleware(object):
 
     def __init__(self):
         try:
-            country_data = dat_getter.update_dat()
+            # XXX intellectronica 2015-03-19
+            # Disabling dat_getter for now. Users need to make sure they have
+            # the GeoIP DB installed to use this.
+            # country_data = dat_getter.update_dat()
             self.geo_ip = GeoIP(**country_data)
         except Exception as e:
             warnings.warn('GeoIP database is not initialized: {0}'.format(e))
