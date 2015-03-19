@@ -19,6 +19,12 @@ class ResolveCountryCodeMiddleware(object):
             # Disabling dat_getter for now. Users need to make sure they have
             # the GeoIP DB installed to use this.
             # country_data = dat_getter.update_dat()
+            # The values supplied here only work in the
+            # Aldryn base project >= 1.4.2
+            country_data = {
+                'path': '/opt/geoip',
+                'country': 'GeoIP.dat',
+            }
             self.geo_ip = GeoIP(**country_data)
         except Exception as e:
             warnings.warn('GeoIP database is not initialized: {0}'.format(e))
