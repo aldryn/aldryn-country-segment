@@ -282,6 +282,9 @@ class CountrySegmentPluginModel(SegmentBasePluginModel):
         ('ZA', _('South Africa')),
         ('ZM', _('Zambia')),
         ('ZW', _('Zimbabwe')),
+        ('XX', _('- Country Not Found -')),
+        ('XA', _('- GeoIP not initialized -')),
+        ('XB', _('- Error trying to determine country -')),
     ]
 
     #

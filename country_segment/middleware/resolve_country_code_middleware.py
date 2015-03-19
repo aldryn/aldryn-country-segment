@@ -63,9 +63,15 @@ class ResolveCountryCodeMiddleware(object):
                     country_code = country_code.upper()
                 else:
                     country_code = 'XX'
-            except:
+                    warnings.warn('Country could not be determined.')
+            except Exception, ex:
                 country_code = 'XB'
+                warnings.warn(
+                    'Error trying to determine country: {} {}'.format(
+                        repr(ex), str(ex)))
         else:
             country_code = 'XA'
+            warnings.warn('GeoIP not initialised.')
+
 
         request.META['COUNTRY_CODE'] = country_code
