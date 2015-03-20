@@ -14,6 +14,7 @@ from django.contrib.gis.geoip import GeoIP
 class ResolveCountryCodeMiddleware(object):
 
     def __init__(self):
+        self._debug_file = open('/tmp/segmentation-debug.log', 'a') # DEBUG
         try:
             # XXX intellectronica 2015-03-19
             # Disabling dat_getter for now. Users need to make sure they have
@@ -28,6 +29,7 @@ class ResolveCountryCodeMiddleware(object):
             self.geo_ip = GeoIP(**country_data)
         except Exception as e:
             warnings.warn('GeoIP database is not initialized: {0}'.format(e))
+            self._debug_file.write('GeoIP database is not initialized: {0}\n'.format(e)) # DEBUG
             self.geo_ip = False
 
 
@@ -65,16 +67,16 @@ class ResolveCountryCodeMiddleware(object):
                     country_code = country_code.upper()
                 else:
                     country_code = 'XX'
-                    warnings.warn('Country could not be determined.') # DEBUG
+                    self._debug_file.write('Country could not be determined.') # DEBUG
             except Exception, ex:
                 country_code = 'XB'
-                warnings.warn(
-                    'Error trying to determine country: {} {}'.format(
+                self._debug_file.write(
+                    'Error trying to determine country: {} {}\n'.format(
                         repr(ex), str(ex))) # DEBUG
         else:
             country_code = 'XA'
-            warnings.warn('GeoIP not initialised.') # DEBUG
+            self._debug_file.write('GeoIP not initialised.') # DEBUG
 
-        warnings.warn('COUNTRY_CODE == {}'.format(country_code)) # DEBUG
+        self._debug_file.write('COUNTRY_CODE == {}'.format(country_code)) # DEBUG
 
         request.META['COUNTRY_CODE'] = country_code
