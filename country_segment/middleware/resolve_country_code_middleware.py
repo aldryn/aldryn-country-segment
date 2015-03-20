@@ -11,10 +11,16 @@ import warnings
 from django.contrib.gis.geoip import GeoIP
 
 
+def cowboy_log(msg):
+    # DEBUG
+    with open('/tmp/segmentation-debug.log', 'a') as debug_file:
+        debug_file.write('{}\n'.format(msg))
+
+
 class ResolveCountryCodeMiddleware(object):
 
     def __init__(self):
-        self._debug_file = open('/tmp/segmentation-debug.log', 'a') # DEBUG
+        cowboy_log('Entering ResolveCountryCodeMiddleware.__init__') # DEBUG
         try:
             # XXX intellectronica 2015-03-19
             # Disabling dat_getter for now. Users need to make sure they have
@@ -27,9 +33,10 @@ class ResolveCountryCodeMiddleware(object):
                 'country': 'GeoIP.dat',
             }
             self.geo_ip = GeoIP(**country_data)
+            cowboy_log('ResolveCountryCodeMiddleware.__init__ self.geoip == {}'.format(self.geoip)) # DEBUG
         except Exception as e:
             warnings.warn('GeoIP database is not initialized: {0}'.format(e))
-            self._debug_file.write('GeoIP database is not initialized: {0}\n'.format(e)) # DEBUG
+            cowboy_log('GeoIP database is not initialized: {0}\n'.format(e)) # DEBUG
             self.geo_ip = False
 
 
@@ -58,7 +65,7 @@ class ResolveCountryCodeMiddleware(object):
         See: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
         '''
 
-        warnings.warn('Entering process_request') # DEBUG
+        cowboy_log('Entering process_request') # DEBUG
 
         if self.geo_ip:
             try:
@@ -67,16 +74,16 @@ class ResolveCountryCodeMiddleware(object):
                     country_code = country_code.upper()
                 else:
                     country_code = 'XX'
-                    self._debug_file.write('Country could not be determined.') # DEBUG
+                    cowboy_log('Country could not be determined') # DEBUG
             except Exception, ex:
                 country_code = 'XB'
-                self._debug_file.write(
+                cowboy_log(
                     'Error trying to determine country: {} {}\n'.format(
                         repr(ex), str(ex))) # DEBUG
         else:
             country_code = 'XA'
-            self._debug_file.write('GeoIP not initialised.') # DEBUG
+            cowboy_log('GeoIP not initialised.') # DEBUG
 
-        self._debug_file.write('COUNTRY_CODE == {}'.format(country_code)) # DEBUG
+        cowboy_log('COUNTRY_CODE == {}'.format(country_code)) # DEBUG
 
         request.META['COUNTRY_CODE'] = country_code
