@@ -38,7 +38,7 @@ class CountrySegmentPlugin(SegmentPluginBase):
             code = request.META['COUNTRY_CODE']
         except:
             code = None
-        code = context.get('COUNTRY_CODE')
+
         return (code == instance.country_code)
 
 plugin_pool.register_plugin(CountrySegmentPlugin)
