@@ -33,6 +33,11 @@ class CountrySegmentPlugin(SegmentPluginBase):
         pass
 
     def is_context_appropriate(self, context, instance):
+        try:
+            request = context['request']
+            code = request.META['COUNTRY_CODE']
+        except:
+            code = None
         code = context.get('COUNTRY_CODE')
         return (code == instance.country_code)
 
