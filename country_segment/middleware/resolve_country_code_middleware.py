@@ -33,7 +33,7 @@ class ResolveCountryCodeMiddleware(object):
                 'country': 'GeoIP.dat',
             }
             self.geo_ip = GeoIP(**country_data)
-            cowboy_log('ResolveCountryCodeMiddleware.__init__ self.geoip == {}'.format(self.geoip)) # DEBUG
+            cowboy_log('ResolveCountryCodeMiddleware.__init__ self.geoip == {}'.format(self.geo_ip)) # DEBUG
         except Exception as e:
             warnings.warn('GeoIP database is not initialized: {0}'.format(e))
             cowboy_log('GeoIP database is not initialized: {0}\n'.format(e)) # DEBUG
