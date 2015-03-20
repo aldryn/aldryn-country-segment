@@ -56,6 +56,8 @@ class ResolveCountryCodeMiddleware(object):
         See: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
         '''
 
+        warnings.warn('Entering process_request') # DEBUG
+
         if self.geo_ip:
             try:
                 country_code = self.geo_ip.country_code(self.get_client_ip(request))
@@ -63,15 +65,16 @@ class ResolveCountryCodeMiddleware(object):
                     country_code = country_code.upper()
                 else:
                     country_code = 'XX'
-                    warnings.warn('Country could not be determined.')
+                    warnings.warn('Country could not be determined.') # DEBUG
             except Exception, ex:
                 country_code = 'XB'
                 warnings.warn(
                     'Error trying to determine country: {} {}'.format(
-                        repr(ex), str(ex)))
+                        repr(ex), str(ex))) # DEBUG
         else:
             country_code = 'XA'
-            warnings.warn('GeoIP not initialised.')
+            warnings.warn('GeoIP not initialised.') # DEBUG
 
+        warnings.warn('COUNTRY_CODE == {}'.format(country_code)) # DEBUG
 
         request.META['COUNTRY_CODE'] = country_code
