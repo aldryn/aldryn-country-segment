@@ -35,7 +35,7 @@ NOTE: At this time, the project has been tested under:
    the whole toolbar won't render at all and you may have trouble with
    AliasPlugins.
 1. Install Aldryn Segmentation (not yet in PyPI).
-1. Add `'country-segment'` to INSTALLED_APPS in your Django project's
+1. Add `'country_segment'` to INSTALLED_APPS in your Django project's
    settings file.
 1. Add `country_segment.middleware.ResolveCountryCodeMiddleware`
    to your settings.MIDDLEWARE.
