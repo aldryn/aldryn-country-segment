@@ -10,6 +10,7 @@ from aldryn_segmentation.cms_plugins import SegmentPluginBase
 
 from .models import CountrySegmentPluginModel
 
+
 class CountrySegmentPlugin(SegmentPluginBase):
     '''
     This plugin allows segmentation based on the visitor's IP addresses
