@@ -1,55 +1,26 @@
 # -*- coding: utf-8 -*-
-from south.utils import datetime_utils as datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import models, migrations
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'CountrySegmentPluginModel'
-        db.create_table(u'country_segment_countrysegmentpluginmodel', (
-            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
-            ('label', self.gf('django.db.models.fields.CharField')(default=u'', max_length=128, blank=True)),
-            ('country_code', self.gf('django.db.models.fields.CharField')(default=u'O1', max_length=2)),
-        ))
-        db.send_create_signal(u'country_segment', ['CountrySegmentPluginModel'])
+    dependencies = [
+        ('cms', '0003_auto_20140926_2347'),
+        ('aldryn_segmentation', '0001_initial'),
+    ]
 
-
-    def backwards(self, orm):
-        # Deleting model 'CountrySegmentPluginModel'
-        db.delete_table(u'country_segment_countrysegmentpluginmodel')
-
-
-    models = {
-        'cms.cmsplugin': {
-            'Meta': {'object_name': 'CMSPlugin'},
-            'changed_date': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'creation_date': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'language': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
-            'level': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
-            'lft': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
-            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.CMSPlugin']", 'null': 'True', 'blank': 'True'}),
-            'placeholder': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Placeholder']", 'null': 'True'}),
-            'plugin_type': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'}),
-            'position': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
-            'rght': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
-            'tree_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'})
-        },
-        'cms.placeholder': {
-            'Meta': {'object_name': 'Placeholder'},
-            'default_width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'slot': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'})
-        },
-        u'country_segment.countrysegmentpluginmodel': {
-            'Meta': {'object_name': 'CountrySegmentPluginModel'},
-            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
-            'country_code': ('django.db.models.fields.CharField', [], {'default': "u'O1'", 'max_length': '2'}),
-            'label': ('django.db.models.fields.CharField', [], {'default': "u''", 'max_length': '128', 'blank': 'True'})
-        }
-    }
-
-    complete_apps = ['country_segment']
+    operations = [
+        migrations.CreateModel(
+            name='CountrySegmentPluginModel',
+            fields=[
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('label', models.CharField(default='', max_length=128, verbose_name='label', blank=True)),
+                ('country_code', models.CharField(default='O1', max_length=2, verbose_name='country', choices=[('A1', 'A1: Anonymous Proxy'), ('A2', 'A2: Satellite Provider'), ('O1', 'O1: Other Country'), ('AD', 'AD: Andorra'), ('AE', 'AE: United Arab Emirates'), ('AF', 'AF: Afghanistan'), ('AG', 'AG: Antigua and Barbuda'), ('AI', 'AI: Anguilla'), ('AL', 'AL: Albania'), ('AM', 'AM: Armenia'), ('AO', 'AO: Angola'), ('AP', 'AP: Asia/Pacific Region'), ('AQ', 'AQ: Antarctica'), ('AR', 'AR: Argentina'), ('AS', 'AS: American Samoa'), ('AT', 'AT: Austria'), ('AU', 'AU: Australia'), ('AW', 'AW: Aruba'), ('AX', 'AX: Aland Islands'), ('AZ', 'AZ: Azerbaijan'), ('BA', 'BA: Bosnia and Herzegovina'), ('BB', 'BB: Barbados'), ('BD', 'BD: Bangladesh'), ('BE', 'BE: Belgium'), ('BF', 'BF: Burkina Faso'), ('BG', 'BG: Bulgaria'), ('BH', 'BH: Bahrain'), ('BI', 'BI: Burundi'), ('BJ', 'BJ: Benin'), ('BL', 'BL: Saint Bartelemey'), ('BM', 'BM: Bermuda'), ('BN', 'BN: Brunei Darussalam'), ('BO', 'BO: Bolivia'), ('BQ', 'BQ: Bonaire, Saint Eustatius and Saba'), ('BR', 'BR: Brazil'), ('BS', 'BS: Bahamas'), ('BT', 'BT: Bhutan'), ('BV', 'BV: Bouvet Island'), ('BW', 'BW: Botswana'), ('BY', 'BY: Belarus'), ('BZ', 'BZ: Belize'), ('CA', 'CA: Canada'), ('CC', 'CC: Cocos (Keeling) Islands'), ('CD', 'CD: Congo, The Democratic Republic of the'), ('CF', 'CF: Central African Republic'), ('CG', 'CG: Congo'), ('CH', 'CH: Switzerland'), ('CI', 'CI: Cote d\u2019Ivoire'), ('CK', 'CK: Cook Islands'), ('CL', 'CL: Chile'), ('CM', 'CM: Cameroon'), ('CN', 'CN: China'), ('CO', 'CO: Colombia'), ('CR', 'CR: Costa Rica'), ('CU', 'CU: Cuba'), ('CV', 'CV: Cape Verde'), ('CW', 'CW: Curacao'), ('CX', 'CX: Christmas Island'), ('CY', 'CY: Cyprus'), ('CZ', 'CZ: Czech Republic'), ('DE', 'DE: Germany'), ('DJ', 'DJ: Djibouti'), ('DK', 'DK: Denmark'), ('DM', 'DM: Dominica'), ('DO', 'DO: Dominican Republic'), ('DZ', 'DZ: Algeria'), ('EC', 'EC: Ecuador'), ('EE', 'EE: Estonia'), ('EG', 'EG: Egypt'), ('EH', 'EH: Western Sahara'), ('ER', 'ER: Eritrea'), ('ES', 'ES: Spain'), ('ET', 'ET: Ethiopia'), ('EU', 'EU: Europe'), ('FI', 'FI: Finland'), ('FJ', 'FJ: Fiji'), ('FK', 'FK: Falkland Islands (Malvinas)'), ('FM', 'FM: Micronesia, Federated States of'), ('FO', 'FO: Faroe Islands'), ('FR', 'FR: France'), ('GA', 'GA: Gabon'), ('GB', 'GB: United Kingdom'), ('GD', 'GD: Grenada'), ('GE', 'GE: Georgia'), ('GF', 'GF: French Guiana'), ('GG', 'GG: Guernsey'), ('GH', 'GH: Ghana'), ('GI', 'GI: Gibraltar'), ('GL', 'GL: Greenland'), ('GM', 'GM: Gambia'), ('GN', 'GN: Guinea'), ('GP', 'GP: Guadeloupe'), ('GQ', 'GQ: Equatorial Guinea'), ('GR', 'GR: Greece'), ('GS', 'GS: South Georgia and the South Sandwich Islands'), ('GT', 'GT: Guatemala'), ('GU', 'GU: Guam'), ('GW', 'GW: Guinea-Bissau'), ('GY', 'GY: Guyana'), ('HK', 'HK: Hong Kong'), ('HM', 'HM: Heard Island and McDonald Islands'), ('HN', 'HN: Honduras'), ('HR', 'HR: Croatia'), ('HT', 'HT: Haiti'), ('HU', 'HU: Hungary'), ('ID', 'ID: Indonesia'), ('IE', 'IE: Ireland'), ('IL', 'IL: Israel'), ('IM', 'IM: Isle of Man'), ('IN', 'IN: India'), ('IO', 'IO: British Indian Ocean Territory'), ('IQ', 'IQ: Iraq'), ('IR', 'IR: Iran, Islamic Republic of'), ('IS', 'IS: Iceland'), ('IT', 'IT: Italy'), ('JE', 'JE: Jersey'), ('JM', 'JM: Jamaica'), ('JO', 'JO: Jordan'), ('JP', 'JP: Japan'), ('KE', 'KE: Kenya'), ('KG', 'KG: Kyrgyzstan'), ('KH', 'KH: Cambodia'), ('KI', 'KI: Kiribati'), ('KM', 'KM: Comoros'), ('KN', 'KN: Saint Kitts and Nevis'), ('KP', 'KP: Korea, Democratic People\u2019s Republic of'), ('KR', 'KR: Korea, Republic of'), ('KW', 'KW: Kuwait'), ('KY', 'KY: Cayman Islands'), ('KZ', 'KZ: Kazakhstan'), ('LA', 'LA: Lao, People\u2019s Democratic Republic of'), ('LB', 'LB: Lebanon'), ('LC', 'LC: Saint Lucia'), ('LI', 'LI: Liechtenstein'), ('LK', 'LK: Sri Lanka'), ('LR', 'LR: Liberia'), ('LS', 'LS: Lesotho'), ('LT', 'LT: Lithuania'), ('LU', 'LU: Luxembourg'), ('LV', 'LV: Latvia'), ('LY', 'LY: Libyan Arab Jamahiriya'), ('MA', 'MA: Morocco'), ('MC', 'MC: Monaco'), ('MD', 'MD: Moldova, Republic of'), ('ME', 'ME: Montenegro'), ('MF', 'MF: Saint Martin'), ('MG', 'MG: Madagascar'), ('MH', 'MH: Marshall Islands'), ('MK', 'MK: Macedonia'), ('ML', 'ML: Mali'), ('MM', 'MM: Myanmar'), ('MN', 'MN: Mongolia'), ('MO', 'MO: Macao'), ('MP', 'MP: Northern Mariana Islands'), ('MQ', 'MQ: Martinique'), ('MR', 'MR: Mauritania'), ('MS', 'MS: Montserrat'), ('MT', 'MT: Malta'), ('MU', 'MU: Mauritius'), ('MV', 'MV: Maldives'), ('MW', 'MW: Malawi'), ('MX', 'MX: Mexico'), ('MY', 'MY: Malaysia'), ('MZ', 'MZ: Mozambique'), ('NA', 'NA: Namibia'), ('NC', 'NC: New Caledonia'), ('NE', 'NE: Niger'), ('NF', 'NF: Norfolk Island'), ('NG', 'NG: Nigeria'), ('NI', 'NI: Nicaragua'), ('NL', 'NL: Netherlands'), ('NO', 'NO: Norway'), ('NP', 'NP: Nepal'), ('NR', 'NR: Nauru'), ('NU', 'NU: Niue'), ('NZ', 'NZ: New Zealand'), ('OM', 'OM: Oman'), ('PA', 'PA: Panama'), ('PE', 'PE: Peru'), ('PF', 'PF: French Polynesia'), ('PG', 'PG: Papua New Guinea'), ('PH', 'PH: Philippines'), ('PK', 'PK: Pakistan'), ('PL', 'PL: Poland'), ('PM', 'PM: Saint Pierre and Miquelon'), ('PN', 'PN: Pitcairn'), ('PR', 'PR: Puerto Rico'), ('PS', 'PS: Palestinian Territory'), ('PT', 'PT: Portugal'), ('PW', 'PW: Palau'), ('PY', 'PY: Paraguay'), ('QA', 'QA: Qatar'), ('RE', 'RE: Reunion'), ('RO', 'RO: Romania'), ('RS', 'RS: Serbia'), ('RU', 'RU: Russian Federation'), ('RW', 'RW: Rwanda'), ('SA', 'SA: Saudi Arabia'), ('SB', 'SB: Solomon Islands'), ('SC', 'SC: Seychelles'), ('SD', 'SD: Sudan'), ('SE', 'SE: Sweden'), ('SG', 'SG: Singapore'), ('SH', 'SH: Saint Helena'), ('SI', 'SI: Slovenia'), ('SJ', 'SJ: Svalbard and Jan Mayen'), ('SK', 'SK: Slovakia'), ('SL', 'SL: Sierra Leone'), ('SM', 'SM: San Marino'), ('SN', 'SN: Senegal'), ('SO', 'SO: Somalia'), ('SR', 'SR: Suriname'), ('SS', 'SS: South Sudan'), ('ST', 'ST: Sao Tome and Principe'), ('SV', 'SV: El Salvador'), ('SX', 'SX: Sint Maarten'), ('SY', 'SY: Syrian Arab Republic'), ('SZ', 'SZ: Swaziland'), ('TC', 'TC: Turks and Caicos Islands'), ('TD', 'TD: Chad'), ('TF', 'TF: French Southern Territories'), ('TG', 'TG: Togo'), ('TH', 'TH: Thailand'), ('TJ', 'TJ: Tajikistan'), ('TK', 'TK: Tokelau'), ('TL', 'TL: Timor-Leste'), ('TM', 'TM: Turkmenistan'), ('TN', 'TN: Tunisia'), ('TO', 'TO: Tonga'), ('TR', 'TR: Turkey'), ('TT', 'TT: Trinidad and Tobago'), ('TV', 'TV: Tuvalu'), ('TW', 'TW: Taiwan'), ('TZ', 'TZ: Tanzania, United Republic of'), ('UA', 'UA: Ukraine'), ('UG', 'UG: Uganda'), ('UM', 'UM: United States Minor Outlying Islands'), ('US', 'US: United States'), ('UY', 'UY: Uruguay'), ('UZ', 'UZ: Uzbekistan'), ('VA', 'VA: Holy See (Vatican City State)'), ('VC', 'VC: Saint Vincent and the Grenadines'), ('VE', 'VE: Venezuela'), ('VG', 'VG: Virgin Islands, British'), ('VI', 'VI: Virgin Islands, U.S.'), ('VN', 'VN: Vietnam'), ('VU', 'VU: Vanuatu'), ('WF', 'WF: Wallis and Futuna'), ('WS', 'WS: Samoa'), ('YE', 'YE: Yemen'), ('YT', 'YT: Mayotte'), ('ZA', 'ZA: South Africa'), ('ZM', 'ZM: Zambia'), ('ZW', 'ZW: Zimbabwe'), ('XX', 'XX: - Country Not Found -'), ('XA', 'XA: - GeoIP not initialized -'), ('XB', 'XB: - Error trying to determine country -')])),
+            ],
+            options={
+            },
+            bases=('cms.cmsplugin',),
+        ),
+    ]
