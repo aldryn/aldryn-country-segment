@@ -19,9 +19,11 @@ class ResolveCountryCodeMiddleware(object):
         See: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
         '''
         try:
-            country_code = get_country(request)
+            country_data = get_country(request)
         except Exception:
             country_code = 'XB'
+        else:
+            country_code = country_data.get('country_code')
 
         if country_code:
             country_code = country_code.upper()

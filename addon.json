@@ -1,16 +1,7 @@
 {
-    "name": "Aldryn Country Segment",
-    "description": "Provides market segmentation by country to Aldryn!",
-    "url": "https://github.com/aldryn/aldryn-country-segment",
-    "package-name": "aldryn-country-segmentation",
+    "package-name": "aldryn-country-segment",
     "installed-apps": [
+        "aldryn_geoip",
         "country_segment"
-    ],
-    "author": {
-        "name": "Divio",
-        "url": "https://www.aldryn.com"
-    },
-    "license": {
-        "name": "BSD"
-    }
+    ]
 }
