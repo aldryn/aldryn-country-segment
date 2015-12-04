@@ -3,7 +3,14 @@
 from aldryn_client import forms
 
 class Form(forms.BaseForm):
+
     def to_settings(self, cleaned_data, settings_dict):
+        import aldryn_geoip
+
+        settings_dict.setdefault('GEOIP_PATH', aldryn_geoip.where())
+        # django.contrib.gis.geoip.GeoIP.GEOIP_STANDARD
+        settings_dict.setdefault('GEOIP_CACHE_METHOD', 0)
+
         country_mw = 'country_segment.middleware.ResolveCountryCodeMiddleware'
         if country_mw not in settings_dict['MIDDLEWARE_CLASSES']:
             for position, mw in enumerate(settings_dict['MIDDLEWARE_CLASSES']):
