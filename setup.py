@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 from country_segment import __version__
 
 REQUIREMENTS = [
-    # 'django-cms>=3.0.2'
+    'aldryn-geoip',
 ]
 
 CLASSIFIERS = [
