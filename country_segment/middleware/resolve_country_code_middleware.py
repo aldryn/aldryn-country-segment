@@ -20,10 +20,10 @@ class ResolveCountryCodeMiddleware(object):
         '''
         try:
             country_data = get_country(request)
+            # we let the general exception handler catch this
+            country_code = country_data.get('country_code')
         except Exception:
             country_code = 'XB'
-        else:
-            country_code = country_data.get('country_code')
 
         if country_code:
             country_code = country_code.upper()
