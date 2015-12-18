@@ -11,6 +11,12 @@ class Form(forms.BaseForm):
         # django.contrib.gis.geoip.GeoIP.GEOIP_STANDARD
         settings_dict.setdefault('GEOIP_CACHE_METHOD', 0)
 
+        # On Aldryn default to the X-Forwarded-For header
+        settings_dict.setdefault(
+            'GEOIP_REQUEST_IP_RESOLVER',
+            'aldryn_geoip.utils.x_forwarded_ip'
+        )
+
         country_mw = 'country_segment.middleware.ResolveCountryCodeMiddleware'
         if country_mw not in settings_dict['MIDDLEWARE_CLASSES']:
             for position, mw in enumerate(settings_dict['MIDDLEWARE_CLASSES']):
